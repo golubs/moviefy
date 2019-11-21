@@ -1,11 +1,12 @@
 import React from "react";
 import GlobalStyles from "./components/GlobalStyles";
+import Header from "./components/Header";
 
 function App() {
   return (
     <>
       <GlobalStyles />
-      <header>moviefy LOGO, Search, IconButton</header>
+      <Header />
       <main>Movies</main>
     </>
   );
