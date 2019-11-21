@@ -12,7 +12,7 @@ export default function GlobalStyles() {
         }
         body {
           margin: 0;
-          font-family: "Tomorrow", sans-serif;
+          font-family: "Tomorrow", sans-serif, "Courier New", monospace;
           background: #f2c335;
           color: #3e5902;
         }
