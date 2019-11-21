@@ -2,6 +2,14 @@ import React from "react";
 import styled from "@emotion/styled";
 import search from "../assets/search.svg";
 import close from "../assets/close.svg";
+import { keyframes } from "@emotion/core";
+
+const spin = keyframes`
+from {
+  transform: rotate(0deg)
+}
+to { transform: rotate(360deg)}
+`;
 
 const Button = styled.button`
   height: 100%;
@@ -15,13 +23,20 @@ const Button = styled.button`
 `;
 
 const Icon = styled.img`
-  height: 90%;
+  margin: 4px;
 `;
 
-export default function SearchButton() {
+const AnimatedIcon = styled(Icon)`
+  animation: ${spin} 1s eas 1;
+`;
+
+export default function SearchButton({ active, onClick }) {
   return (
-    <Button>
-      <Icon src={close} />
+    <Button onClick={onClick}>
+      <Icon
+        animationCount={Number(active)}
+        src={active ? { search } : { close }}
+      />
     </Button>
   );
 }

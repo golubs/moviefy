@@ -10,16 +10,22 @@ const AppBar = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #f29a2e;
+  background: ${props => (props.active ? "#eee" : "#f29a2e")};
+  color: #fff;
 `;
 
 export default function Header() {
+  const [showSearch, setShowSearch] = React.useState(false);
+
   return (
     // moviefy LOGO, Search, IconButton
     <AppBar>
-      <Logo test="moviefy" />
-      <Search />
-      <SearchButton />
+      {!showSearch && <Logo text="Films Over 9000" />}
+      {showSearch && <Search />}
+      <SearchButton
+        actice={showSearch}
+        onClick={() => setShowSearch(!showSearch)}
+      />
     </AppBar>
   );
 }
