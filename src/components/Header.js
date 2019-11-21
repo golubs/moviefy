@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "@emotion/styled";
 import Logo from "./Logo";
+import Search from "./Search";
+import SearchButton from "./SearchButton";
 
 const AppBar = styled.header`
   background: #f29a2e;
@@ -9,9 +11,11 @@ const AppBar = styled.header`
 
 export default function Header() {
   return (
+    // moviefy LOGO, Search, IconButton
     <AppBar>
       <Logo test="moviefy" />
-      moviefy LOGO, Search, IconButton
+      <Search />
+      <SearchButton />
     </AppBar>
   );
 }
