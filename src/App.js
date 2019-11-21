@@ -1,7 +1,14 @@
 import React from "react";
+import GlobalStyles from "./components/GlobalStyles";
 
 function App() {
-  return <div>moviefy</div>;
+  return (
+    <>
+      <GlobalStyles />
+      <header>moviefy LOGO, Search, IconButton</header>
+      <main>Movies</main>
+    </>
+  );
 }
 
 export default App;
